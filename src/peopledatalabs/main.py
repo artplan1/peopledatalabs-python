@@ -9,7 +9,7 @@ from pydantic import (
     constr,
     validator,
 )
-from pydantic.dataclasses import dataclass
+from pydantic.dataclasses import BaseModel
 
 
 from .endpoints import Endpoint
@@ -27,8 +27,7 @@ from .utils import check_empty_parameters
 logger = get_logger()
 
 
-@dataclass
-class PDLPY:
+class PDLPY(BaseModel):
     """
     Client's main class. All methods derive from the instantiation of this
     class.
